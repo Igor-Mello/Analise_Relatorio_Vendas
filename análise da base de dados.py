@@ -5,7 +5,7 @@ import win32com.client as win32
 # importar a base de dados
 
 
-tabela_vendas = pd.read_excel(r"C:\Users\Igor Mello\OneDrive\Área de Trabalho\vscode project\outros\AnBaDa\Vendas.xlsx")
+tabela_vendas = pd.read_excel(r"COPY PATH DA BASE DE DADOS")
 
 
 # visualizar a base de dados
@@ -40,7 +40,7 @@ print(ticket_medio)
 
 outlook = win32.Dispatch('outlook.application')
 mail = outlook.CreateItem(0)
-mail.To = 'example@eq.ufrj.br'
+mail.To = 'example@hotmail.com'
 mail.Subject = 'Relatório de vendas por loja'
 mail.HTMLBody = f'''
 <p>Prezados,</p>
@@ -56,7 +56,7 @@ mail.HTMLBody = f'''
 <p>Ticket Médio por loja:</p>
 {ticket_medio.to_html(formatters = {'Ticket Médio': 'R${:,.2f}'.format})}
 <p>Att.</p>
-<p>Igor Mello</p>
+<p>SEU NOME</p>
 
 
 '''
